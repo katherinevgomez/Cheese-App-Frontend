@@ -1,0 +1,71 @@
+//////////////////
+//VARIABLES
+//////////////////
+$mainColor: black;
+$contrastColor: white;
+
+@mixin white-text-black-bg {
+    color: $contrastColor;
+    background-color: $mainColor;
+}
+
+@mixin black-test-white-bg {
+    color: $mainColor;
+    background-color: $contrastColor;
+}
+
+//////////////////////
+//Header
+//////////////////////
+nav {
+    @include white-text-black-bg;
+    display: flex;
+    justify-content: flex-start;
+
+    a{
+        @include white-text-black-bg;
+        div {
+            margin: 10px;
+            font-size: large;
+        }
+    }
+}
+
+///////////////////
+//FORM
+///////////////////
+section, div {
+    form {
+        input {
+            @include white-text-black-bg;
+            padding: 10px;
+            font-size: 1.1em;
+            margin: 10px;
+
+            &[type="submit"]:hover {
+                @include black-test-white-bg;
+            }
+        }
+    }
+}
+
+/////////////////////
+//BUTTON
+/////////////////////
+button#delete {
+    @include white-text-black-bg;
+    display: block;
+    margin: auto;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+////////////////////
+//IMAGES
+///////////////////
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 90px;
+    object-fit: cover;
+}
